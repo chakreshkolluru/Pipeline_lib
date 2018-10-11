@@ -1,15 +1,25 @@
 def call(){
-	node{
-		stage 'checkout'
-		git "https://github.com/chakreshkolluru/Myrepository.git"
-
-		
-			stage 'compile'
-			sh "javac sample/Hello.java"
-
-			stage 'Run'
-			sh "java -cp sample Hello"
-		
+		pipeline{
+			agent any
+			stages{
+				stage('checkout')
+				{
+					steps{
+						git "https://github.com/chakreshkolluru/Myrepository.git"					
+					}
+				}
+				stage('build'){
+					steps{
+						sh "javac sample/Hello.java" 
+					}
+				}
+				stage('run'){
+					steps{
+						sh "java -cp sample Hello"	
+				}
+			}
+		}
+		//echo "This is a file in vars folder"
 
 	}
 }
