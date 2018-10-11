@@ -3,19 +3,13 @@ def call(){
 		stage 'checkout'
 		git "https://github.com/chakreshkolluru/Myrepository.git"
 
-		dir('sample'){
+		
 			stage 'compile'
-			sh "javac Hello.java"
+			sh "javac sample/Hello.java"
 
 			stage 'Run'
-			sh "java Hello"
-		}
+			sh "java -cp sample Hello"
+		
 
-		post{
-			success{
-				echo "----Library is Successfully Imported----"
-				echo "Build is success"
-			}
-		}
 	}
 }
