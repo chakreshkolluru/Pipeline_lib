@@ -1,3 +1,5 @@
+package org.foo;
+
 class Example{
 	String s;
     Example(String str){this.s=str;}
