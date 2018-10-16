@@ -1,7 +1,7 @@
-def call(){
+def call(String s){
 
 	git "https://github.com/chakreshkolluru/chakresh.git"
-	sh 'javac sample/Hello.java'
+	sh 'javac ${s}/Hello.java'
 
-	sh 'java -cp sample Hello'
+	sh 'java -cp ${s} Hello'
 }
