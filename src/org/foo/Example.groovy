@@ -6,7 +6,7 @@ class Example{
 
     def method1()
     {
-    	echo "This is a groovy class file with a string parameter   ${s}"
+    	print "This is a groovy class file with a string parameter   ${s}"
     }
 
 }
